@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@5.9.55/css/materialdesignicons.min.css">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&family=Raleway:ital,wght@0,400;0,700;1,400;1,700&family=Rubik:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;1,400;1,700&family=Rubik:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+    rel="stylesheet">
+  <title>Frontend Mentor | Fylo landing page with two column layout</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    :root {
+      font-size: 15x;
+      /* ### Primary */
+
+      ---Very-Dark-Blue: hsl(243, 87%, 12%);
+      ---Desaturated-Blue: hsl(238, 22%, 44%);
+
+      /* ### Accent */
+
+      ---Bright-Blue: hsl(224, 93%, 58%);
+      ---Moderate-Cyan: hsl(170, 45%, 43%);
+
+      /* ### Neutral */
+
+      ---Light-Grayish-Blue: hsl(240, 75%, 98%);
+      ---Light-Gray: hsl(0, 0%, 75%);
+
+      /* ## Typography */
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    header {
+      font-family: 'Raleway', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5rem 3rem 3rem 3rem;
+      /* background-color: aqua; */
+    }
+
+    nav ul {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+    }
+
+    li a {
+      padding: 0%;
+      margin: 0;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+      text-decoration-color: brown;
+      text-underline-offset: 7px;
+      transition: text-decoration 900ms 100ms;
+    }
+
+    main {
+      font-family: 'open sans';
+    }
+
+    .wrapper {
+      padding: 3em 4.3em;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin: 0rem 0 4em 0;
+      gap: 3rem;
+      flex-direction: row-reverse;
+    }
+
+    .item {
+      font-size: 1.7em;
+    }
+
+    .item>h2 {
+      color: var(---Very-Dark-Blue);
+      font-size: 1.7em;
+      margin-bottom: 0.8em;
+    }
+
+    .item>p {
+      font-size: 0.9em;
+      color: var(---Desaturated-Blue);
+      margin: 0.5em auto;
+    }
+
+    img {
+      max-height: 400px;
+      max-width: 100%;
+    }
+
+    .file form {
+      display: flex;
+      gap: 0.5em;
+      margin: 1em 4em 1em auto;
+      /* background-color: black; */
+    }
+
+    form>* {
+      padding: 1em;
+    }
+
+    input[type="text"] {
+      flex: 2;
+      color: var(---Desaturated-Blue);
+    }
+
+    button {
+      flex: 1;
+      background-color: var(---Bright-Blue);
+      border: none;
+      color: var(---Light-Grayish-Blue);
+    }
+
+    .product {
+      background-image: url(./images/bg-curve-desktop.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+    }
+
+    p>a {
+      font-size: 0.7em;
+      padding: 0.3em auto;
+      text-underline-offset: 0.3em;
+    }
+
+    .comment {
+      background-color: white;
+      font-size: 0.6em;
+      width: 50%;
+      padding: 1em;
+      box-shadow: 1px 1px 2em 1px var(---Light-Gray);
+    }
+
+    .kyle {
+      margin: 1em;
+      display: flex;
+      gap: 1em;
+      align-items: center;
+    }
+
+    .comment img {
+      max-height: 3em;
+      border-radius: 50%;
+    }
+
+    .upper {
+      background-color: var(---Desaturated-Blue);
+      gap: 13em;
+      margin: 0;
+      display: flex;
+      padding: 4em 4.3em;
+      align-items: center;
+    }
+
+    .upper>* {
+      flex: 1;
+    }
+
+    .upper h2 {
+      color: white;
+      font-size: 1.5em;
+    }
+
+    .upper p {
+      font-size: 0.8em;
+      color: white;
+
+    }
+
+    .upper form {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      /* align-items: flex-start;
+      justify-content: flex-start; */
+
+    }
+
+    .upper button {
+      width: 50%;
+    }
+
+    .below {
+      background-color: var(---Very-Dark-Blue);
+      color: white;
+      padding: 4em 4.3em;
+
+    }
+
+    .below .inner-footer {
+      display: flex;
+      justify-content: space-between;
+      margin: 2em auto;
+    }
+
+    .inner-footer li {
+      margin: 1em;
+    }
+
+    .social-media>* {
+      margin: 0.5em;
+      padding: 3px;
+      border-radius: 50%;
+      border: 1px solid white;
+      text-decoration: none;
+
+    }
+
+    button:hover {
+      transform: scale(1.2);
+      transition: transform 300ms ease-in 300ms;
+    }
+
+
+
+
+
+
+    @media(max-width:1050px) {
+
+      html {
+        font-size: 18px;
+      }
+
+      body {
+        overflow-x: hidden;
+      }
+
+      .wrapper,
+      form,
+      .inner-footer,
+      .upper {
+        flex-direction: column;
+        gap: 1.5em;
+      }
+
+      .comment {
+        width: 100%;
+      }
+
+      .me {
+        width: 100%;
+      }
+
+      @media (max-width:500px) {
+        html {
+          font-size: 8px;
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="log">
+      <img src="./images/logo.svg" alt="">
+    </div>
+    <nav>
+      <ul>
+        <li> <a href="">Features</a></li>
+        <li> <a href="">Features</a> </li>
+        <li> <a href="">Features</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="wrapper file">
+      <img src="./images/illustration-1.svg" alt="">
+
+      <div class=" item text first">
+        <h2> All your files in one secure location, accessible anywhere.
+        </h2>
+        <p>Fylo stores your most important files in one secure location.
+          Access them wherever you need, share and collaborate with friends,
+          family, and co-workers.</p>
+        <form action="">
+          <input type="text" placeholder="enter your email">
+          <button>get strated</button>
+        </form>
+      </div>
+    </div>
+    </div>
+    <div class="wrapper product">
+      <img src="./images/illustration-2.svg" alt="">
+      <div class="item text two">
+        <h2>
+          Stay productive, wherever you are
+
+        </h2>
+        <p>
+          Never let location be an issue when accessing your files. Fylo has you
+          covered for all of your file storage needs.
+        <p>
+          Securely share files and folders with friends, family and colleagues for
+          live collaboration. No email attachments required!
+        </p>
+
+        <p>
+          <a href="">
+            See how Fylo works
+          </a>
+        </p>
+        <div class="comment">
+          <p>
+            <img src="./images/icon-quotes.svg" alt="">
+            Fylo has improved our team productivity by an order of magnitude. Since
+            making the switch our team has become a well-oiled collaboration machine.
+          </p>
+          <div class="kyle">
+            <img src="./images/avatar-testimonial.jpg" alt="">
+            <span>
+              Kyle Burton <br>
+              Founder & CEO, Huddle
+            </span>
+          </div>
+        </div>
+        </p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="upper">
+      <div class=" item text footer-upper">
+        <h2>
+          Get early access today
+        </h2>
+        <p>
+          It only takes a minute to sign up and our free starter tier is extremely generous.
+          If you have any questions, our support team would be happy to help you.
+        </p>
+      </div>
+      <form action="" class="me">
+        <input type="text" placeholder="enter your email">
+        <button>get strated</button>
+      </form>
+    </div>
+    <div class="below">
+      <div class="logo">
+        <img src="./images/logo.svg" alt="">
+      </div>
+      <div class="inner-footer">
+        <div class="address">
+          <ul>
+            <img src="./images/icon-phone.svg" alt="">
+            Phone: +1-543-123-4567
+            </li>
+            <li>
+              <img src="./images/icon-email.svg" alt=""> <a href="">example@fylo.com</a>
+            </li>
+          </ul>
+          <p>
+          </p>
+        </div>
+        <div>
+          <ul>
+            <li><a href=""> About Us
+              </a></li>
+            <li><a href=""> Jobs
+              </a></li>
+            <li><a href=""> Press
+              </a></li>
+            <li><a href="">
+                Blog
+              </a></li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li><a href=""> Contact Us
+              </a></li>
+            <li><a href=""> Terms
+              </a></li>
+            <li>
+              <a href=""> Privacy
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="social-media">
+          <a href="https://www.facebook.com" target="_blank" class="social-icon">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+
+          <a href="https://www.instagram.com" target="_blank" class="social-icon">
+            <i class="fab fa-instagram"></i>
+          </a>
+
+          <a href="mailto:example@example.com" class="social-icon">
+            <i class="far fa-envelope"></i>
+        </div>
+      </div>
+
+      <div>
+        <p class="attribution">
+          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+          Coded by <a href="https://github.com/samson360-code/3-column-card">samson mamuye</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+  
+</body>
+
+</html>
